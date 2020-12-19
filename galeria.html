@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kółko 20-stka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-image">
+        <div class="content">
+            <header>
+                <div class="navbar-content">
+                    <div class="pc-navbar-list-div">
+                        <div class="pc-ul">
+                            <a href="index.html">Strona Główna</a>
+                            <a href="o-nas.html">O nas</a>
+                            <a href="nasze-wyjazdy.html">Nasze Wyjazdy</a>
+                            <a href="galeria.html">Galeria</a>
+                        </div>
+                    </div>
+                    <div class="mobile-relative">
+                        <div class="mobile-fixed">
+                            <div class="mobile-button">
+                                <div class="container-bars bars" onclick="barsMenu(this)">
+                                    <div class="bar1 bars"></div>
+                                    <div class="bar2 bars"></div>
+                                    <div class="bar3 bars"></div>
+                                </div>
+                            </div>
+                            <div class="mobile-navbar-list-div"> 
+                                <ul class="mobile-ul">
+                                    <li class="mobile-li"><a href="index.html">Strona Główna</a></li>
+                                    <li class="mobile-li"><a href="o-nas.html">O nas</a></li>
+                                    <li class="mobile-li"><a href="nasze-wyjazdy.html">Nasze Wyjazdy</a></li>
+                                    <li class="mobile-li"><a href="galeria.html">Galeria</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main>
+
+            </main>
+            <footer>
+                <div class="footer-grid">
+                    <div class="footer-col address">
+                        <p style="font-weight: bolder; text-align: center;">Adres</p>
+                        <ul class="footer-ul">
+                            <li>Kęty</li>
+                            <li>ul. Żwirki i Wigury 27a</li>
+                            <li>123 123 123</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2571.3355179635105!2d19.216169451659056!3d49.87372547929881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47169a25fd3e7b9b%3A0x8de6fb0edd03be0f!2sPowiatowy%20Zesp%C3%B3%C5%82%20nr%2010%20Szk%C3%B3%C5%82%20Mechaniczno-Elektrycznych%20im.%20Miko%C5%82aja%20Kopernika%20w%20K%C4%99tach!5e0!3m2!1spl!2spl!4v1607967394931!5m2!1spl!2spl" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <br/>
+                        <small>
+                            <ul class="footer-ul">
+                                <li><a href="https://goo.gl/maps/FuREtVhpMAYtKr6p7" target="_blank">Wyświetl większą mapę</a></li>
+                            </ul>
+                        </small>
+                    </div>
+                    <div class="footer-col">
+                        <p style="font-weight: bolder; text-align: center;">Odwiedź nas</p>
+                        <ul class="footer-ul">
+                            <li><a href="http://pz10.eu" target="_blank">Strona szkoły</a></li>
+                            <li><a href="https://www.facebook.com/PZ-Nr-10-Szkół-Mechaniczno-Elektrycznych-imMKopernika-w-Kętach-535157636578325" target="_blank">Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        var scrollToTopBtn = document.querySelector(".top-button")
+        var rootElement = document.documentElement
+
+        function handleScroll() 
+        {
+            console.log('funkcja')
+            // Do something on scroll
+            var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
+            if ((rootElement.scrollTop / scrollTotal ) > 0.50) 
+            {
+                console.log('if')
+                // Show button
+                scrollToTopBtn.classList.add("show-top-button")
+            } 
+            else 
+            {
+                console.log('else')
+                // Hide button
+                scrollToTopBtn.classList.remove("show-top-button")
+            }
+        }
+
+        function scrollToTop() 
+        {
+            // Scroll to top logic
+            rootElement.scrollTo( {top: 0, behavior: "smooth"} )
+            //documentElement.document.scrollTo( {top: 0, behavior: "smooth"} );
+        }
+        scrollToTopBtn.addEventListener("click", scrollToTop)
+        document.addEventListener("scroll", handleScroll)
+
+        $("#menu-btn").click(function(){ $(".mobile-menu").toggle(); });
+
+
+        function barsMenu(x) 
+        {
+            x.classList.toggle("change");
+            $(".mobile-navbar-list-div").toggle('slow');
+        }
+        
+    </script>
+    <script src= 
+        "https://code.jquery.com/jquery-3.4.1.min.js"> 
+    </script> 
+</body>
+
+</html>
