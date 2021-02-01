@@ -305,6 +305,18 @@ a:hover:after {
   text-align: justify;
 }
 
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .stka{
+    font-size: auto;
+  }
+}
+@media (min-width: 767px) {
+  .stka{
+    font-size: 3vw;
+  }
+}
+
 /*
 ==========
   Footer
